@@ -1,3 +1,3 @@
 <template>
-  <label>{{ $store.state.counter }}</label>
+  <label>{{ $store.state.sampleDir.moreDir.sample.counter }}</label>
 </template>

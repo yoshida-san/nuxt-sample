@@ -6,7 +6,7 @@
 export default {
   methods: {
     sayCount() {
-      this.$emit('sayCount', this.$store.state.counter)
+      this.$emit('sayCount', this.$store.state.sampleDir.moreDir.sample.counter)
     },
   },
 }

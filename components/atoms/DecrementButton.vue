@@ -6,7 +6,7 @@
 export default {
   methods: {
     decrement() {
-      this.$store.commit('decrement')
+      this.$store.commit('sampleDir/moreDir/sample/decrement')
     },
   },
 }
