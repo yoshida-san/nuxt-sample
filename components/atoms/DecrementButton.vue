@@ -1,12 +1,18 @@
 <template>
-  <button @click="decrement"><slot /></button>
+  <button @click="decrementProps()">-</button>
 </template>
 
 <script>
 export default {
+  props: {
+    handleDecrementCount: {
+      type: Function,
+      required: true,
+    },
+  },
   methods: {
-    decrement() {
-      this.$store.commit('sampleDir/moreDir/sample/decrement')
+    decrementProps() {
+      this.handleDecrementCount()
     },
   },
 }

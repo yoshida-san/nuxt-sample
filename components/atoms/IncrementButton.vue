@@ -1,18 +1,18 @@
 <template>
-  <button @click="increment">{{ text }}</button>
+  <button @click="incrementProps()">+</button>
 </template>
 
 <script>
 export default {
   props: {
-    text: {
-      type: String,
-      default: 'Increment',
+    handleIncrementCount: {
+      type: Function,
+      required: true,
     },
   },
   methods: {
-    increment() {
-      this.$store.commit('sampleDir/moreDir/sample/increment')
+    incrementProps() {
+      this.handleIncrementCount()
     },
   },
 }

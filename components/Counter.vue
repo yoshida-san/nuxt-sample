@@ -1,21 +1,29 @@
 <template>
   <div>
     <div>
-      <CounterLabel />
+      <CounterLabel :count="count" />
     </div>
     <div>
-      <IncrementButton text="+" @welcome="say" />
-      <DecrementButton><slot>Decrement</slot></DecrementButton>
-      <SayButton @sayCount="say" />
+      <IncrementButton :handle-increment-count="incrementCount" />
+      <DecrementButton :handle-decrement-count="decrementCount" />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  methods: {
-    say(val) {
-      alert(val)
+  props: {
+    count: {
+      type: Number,
+      default: 0,
+    },
+    incrementCount: {
+      type: Function,
+      required: true,
+    },
+    decrementCount: {
+      type: Function,
+      required: true,
     },
   },
 }

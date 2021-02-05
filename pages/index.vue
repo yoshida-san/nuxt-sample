@@ -1,7 +1,11 @@
 <template>
   <div class="container">
     <section>
-      <Counter />
+      <Counter
+        :count="$store.state.sampleDir.moreDir.sample.counter"
+        :increment-count="incrementCount"
+        :decrement-count="decrementCount"
+      />
     </section>
   </div>
 </template>
@@ -10,6 +14,14 @@
 export default {
   // layout: 'sampleLayout',
   middleware: 'sampleMiddleware',
+  methods: {
+    incrementCount() {
+      this.$store.commit('sampleDir/moreDir/sample/increment')
+    },
+    decrementCount() {
+      this.$store.commit('sampleDir/moreDir/sample/decrement')
+    },
+  },
 }
 </script>
 

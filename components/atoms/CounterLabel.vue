@@ -1,3 +1,14 @@
 <template>
-  <label>{{ $store.state.sampleDir.moreDir.sample.counter }}</label>
+  <label v-text="count"></label>
 </template>
+
+<script>
+export default {
+  props: {
+    count: {
+      type: Number,
+      default: 0,
+    },
+  },
+}
+</script>
